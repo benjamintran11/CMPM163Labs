@@ -1,1 +1,1 @@
-three.js-dev/*
+(three.jvs-dev/*)
