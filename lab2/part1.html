@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,22 +14,52 @@
           // Our Javascript will go here.
 
           var scene = new THREE.Scene();
-          var camera = new THREE.PerspectiveCamera(75,
-          window.innerWidth/window.innerHeight, 0.1, 1000);
+          var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 
           var renderer = new THREE.WebGLRenderer();
           renderer.setSize(window.innerWidth, window.innerHeight);
           document.body.appendChild(renderer.domElement);
 
+          //cube 1 (middle)
           var geometry = new THREE.BoxGeometry();
-          var material = new THREE.MeshBasicMaterial( {color: 0xb24dff/*0x00ff00*/} );
+          var material = new THREE.MeshBasicMaterial( {color: 0xb24dff/*0x00ff00*/} ); //purple
           var cube = new THREE.Mesh(geometry, material);
           scene.add(cube);
+
+          //cube 2 (right)
+          var geometry2 = new THREE.BoxGeometry();
+          var material2 = new THREE.MeshBasicMaterial( {color: 0xf0797f/*0x00ff00*/} ); //red
+          var cube2 = new THREE.Mesh(geometry2, material2);
+          scene.add(cube2);
+          geometry2.translate(1, 1, 1); //moves cube
+          geometry2.scale(1.2, 1.2, 1.2); //resizes cube
+
+          //cube 3 (left)
+          var geometry3 = new THREE.BoxGeometry();
+          var material3 = new THREE.MeshBasicMaterial( {color: 0x69602/*0x00ff00*/} ); //green
+          var cube3 = new THREE.Mesh(geometry3, material3);
+          scene.add(cube3);
+          geometry3.translate(-2, -2, -2);
+          geometry3.scale(.8, .8, .8);
+
           camera.position.z = 5; //this moves the camera towards the viewer
 
           function animate() {
             geometry.rotateX(0.01);
             geometry.rotateY(0.01);
+            
+            //for rotation to work, cube has to be brought to origin so that it will rotate around itself, on it's on axis; instead of orbiting around in a circle
+            //then move back to original spot so that it has the rotation and correct position.
+            geometry2.translate(-1, -1, -1); 
+            geometry2.rotateX(0.02);
+            geometry2.rotateY(0.02);
+            geometry2.translate(1, 1, 1);
+
+            geometry3.translate(2, 2, 2);
+            geometry3.rotateX(0.015);
+            geometry3.rotateY(0.015);
+            geometry3.translate(-2, -2, -2);
+
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
           }
