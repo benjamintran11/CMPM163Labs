@@ -20,7 +20,7 @@ Lab 3
 Link to video: https://drive.google.com/file/d/12J9EPF8xuRI9jvutwWYIb-OVwM2H2WnF/view?usp=sharing
 
 Screenshots:
-![](lab3/Screenshots/Cubes4.png)
+![](lab3/Cubes4.png)
 
 For lab 3, my first cube (cube) to the left is the default project one. It is just a cube that is using the three.js material.
 
