@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 3: Shaders in Three.js</title>
+        <style>
+            body { margin: 0; }
+            canvas { display: block; }
+        </style>
+    </head>
+    <body>
+        <script src="../three.js-dev/build/three.js"></script>
+        <script>
+        	//making 4 cubes: 2 cubes with Three.js material and 2 with custom shaders 
+        	//using code from https://github.com/mrdoob/three.js/blob/master/examples/webgl_materials.html for the generateTexture function on line 142 for a texture.
+
+            // setup the scene
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            camera.position.z = 5;
+            
+            // setup the cube
+			var geometry = new THREE.BoxGeometry();
+            var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x00ff00, shininess: 30 } );
+            var cube = new THREE.Mesh( geometry, material );
+            scene.add(cube);
+
+            //creating 2nd cube
+            var texture = new THREE.Texture( generateTexture() ); //creating texture
+            texture.needsUpdate = true; //updates texture
+
+            var geometry2 = new THREE.BoxGeometry();
+            var material2 = new THREE.MeshPhongMaterial( { color: 0xba0737, specular: 0x009900, shininess: 100, map: texture, transparent: true } ); //using shininess, texture function, and transparency settings. Also, is going to be a "Living Coral" color
+
+            var cube2 = new THREE.Mesh( geometry2, material2 );
+            scene.add(cube2);
+            geometry2.translate(2.5, 1, 1); //moves cube to new spot
+         	geometry2.scale(1.2, 1.2, 1.2); //resizes cube
+
+            // add the light
+            var light = new THREE.PointLight(0xffffff, 1, 1000);
+            light.position.set(10, 10, 10);
+            scene.add(light);
+
+
+            var geometry1, material1, mesh1; //variables for the new cube
+
+            function addCoolCube() {
+            	if (count == 2) {
+
+            		let uniforms = {
+            			colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)}, colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
+            		};
+
+            		geometry1 = new THREE.BoxGeometry(1, 1, 1);
+            		material1 = new THREE.ShaderMaterial({
+            			uniforms: uniforms,
+            			fragmentShader: fshader,
+            			vertexShader: vshader,
+            			precision: "mediump"});
+            			//on line 56 adding in uniform as form of parameter for shader material
+            		mesh1 = new THREE.Mesh(geometry1, material1);
+            		mesh1.position.x = 2;
+            		scene.add(mesh1);  
+            		geometry1.translate(0, -2, 0);
+            		geometry1.scale(1.3, 1.3, 1.3);          		
+            	}
+            }
+
+            var geometry4, material4, mesh4;
+
+		    function addCoolCube2() {
+		        if(count4 == 2) {
+
+		        	let uniforms = {
+            			colorB: {type: 'vec3', value: new THREE.Color(0xD1B5FF)}, colorA: {type: 'vec3', value: new THREE.Color(0xFFBC38)}
+            		};
+
+		            geometry4 = new THREE.BoxGeometry(1, 1, 1);
+		       		material4 =  new THREE.ShaderMaterial({
+		       			uniforms: uniforms, //uniforms on the right is the one created by let and left side is the shader material property
+		                fragmentShader: fshader4,
+						vertexShader: vshader4,
+		                precision: "mediump"});
+
+		        mesh4 = new THREE.Mesh(geometry4, material4);
+		        mesh4.position.x = 2;
+		        scene.add(mesh4);
+		   		 }    
+			}
+
+
+
+            THREE.Cache.enabled = true;
+			var count = 0;
+			var loader = new THREE.FileLoader();
+			var fshader, vshader;
+
+			//loads in svertex file
+			loader.load('shaders/vertexShader.vert',
+			// onLoad callback
+			    function (data) {
+			            console.log(data); // output the text to the console
+			            vshader = data;
+			            count += 1;
+			            addCoolCube(); // we will write this method
+			        },
+			// onProgress callback
+			    function (xhr) {
+			        console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+			    },
+			// onError callback
+			    function (err) {
+			        console.error('An error happened');
+			    });
+
+
+			//loads in fragment shader file
+			loader.load('shaders/fragmentShader.frag',
+
+
+			// onLoad callback
+			    function (data) {
+			            console.log(data); // output the text to the console
+			            fshader = data;
+			            count += 1;
+			            addCoolCube(); // we will write this method
+			        },
+			// onProgress callback
+			    function (xhr) {
+			        console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+			    },
+			// onError callback
+			    function (err) {
+			        console.error('An error happened');
+			    });
+
+			var count4 = 0;
+			var loader4 = new THREE.FileLoader();
+			var fshader4, vshader4;
+
+			
+			loader4.load('shaders/vertexShader.vert',
+			// onLoad callback
+			    function (data) {
+			            console.log(data); // output the text to the console
+			            vshader4 = data;
+			            count4 += 1;
+			            addCoolCube2(); // we will write this method
+			        },
+			// onProgress callback
+			    function (xhr) {
+			        console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+			    },
+			// onError callback
+			    function (err) {
+			        console.error('An error happened');
+			    });
+			
+
+			loader4.load('shaders/fragmentShaderCustom.frag',
+			// onLoad callback
+			    function (data) {
+			            console.log(data); // output the text to the console
+			            fshader4 = data;
+			            count4 += 1;
+			            addCoolCube2(); // we will write this method
+			        },
+			// onProgress callback
+			    function (xhr) {
+			        console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+			    },
+			// onError callback
+			    function (err) {
+			        console.error('An error happened');
+			    });
+
+
+
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                geometry.rotateX(0.01);
+                geometry.rotateY(0.01);
+
+                geometry2.translate(-2.5, -1, -1); //moves to origin for rotation
+                geometry2.rotateX(0.008);
+                geometry2.rotateY(0.008);
+                geometry2.translate(2.5, 1, 1); //translates back to new spot.
+
+                if(geometry1) {
+                geometry1.translate(0, 2, 0);	
+	            geometry1.rotateX(0.01);
+    	        geometry1.rotateY(0.01);
+    	        geometry1.translate(0, -2, 0);
+        		}
+
+        		if(geometry4) {
+        		geometry4.rotateX(0.01);
+    	        geometry4.rotateY(0.01);
+        		}
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            //using code from https://github.com/mrdoob/three.js/blob/master/examples/webgl_materials.html for the generateTexture function
+            //makes a new texture to be used
+            function generateTexture() {
+
+				var canvas = document.createElement( 'canvas' );
+				canvas.width = 256;
+				canvas.height = 256;
+
+				var context = canvas.getContext( '2d' );
+				var image = context.getImageData( 0, 0, 256, 256 );
+
+				var x = 0, y = 0;
+
+				for ( var i = 0, j = 0, l = image.data.length; i < l; i += 4, j ++ ) {
+
+					x = j % 256;
+					y = x == 0 ? y + 1 : y;
+
+					image.data[ i ] = 255;
+					image.data[ i + 1 ] = 255;
+					image.data[ i + 2 ] = 255;
+					image.data[ i + 3 ] = Math.floor( x ^ y );
+
+				}
+
+				context.putImageData( image, 0, 0 );
+
+				return canvas;
+
+			}
+
+
+        </script>
+    </body>
+</html>
