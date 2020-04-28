@@ -32,16 +32,22 @@ Finally, we have the last cube to the very right (cube2), which has a variety of
 
 Lab 4
 
-Step 24 questions: 
+Link to video: https://drive.google.com/file/d/17A953AsObiHzVlbc3WoureU_lbcrYred/view?usp=sharing
+
+Step 24 - Questions: 
 
 a) What is a formula to get the x coordinate of the texture given a u value of the uv coordinate (a value between 0 and 1)?
-x = floor (7u)
+
+x = floor(7u)
+
 
 b) What is a formula to get the y coordinate of the texture given a v value of the uv coordinate (a value between 0 and 1)?
+
 y = floor(7*(1-v))
 
-c) What color is sampled from texture at the uv coordinate (0.375, 0.25)? (sample from the image based on the number your formula gives you i.e. (1, 0) (x, y) is blue)
-(0.375, 0.25) = (2, 5)
 
-so, x = 2 and y = 5.
+c) What color is sampled from texture at the uv coordinate (0.375, 0.25)? (sample from the image based on the number your formula gives you i.e. (1, 0) (x, y) is blue)
+
+(0.375, 0.25) = (2, 5)
+so, x = 2 and y = 5, meaning the color that is sampled is: gray (light gray)
 
