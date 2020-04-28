@@ -43,11 +43,22 @@
                 scene.add(cube3);
                 cube3.position.y += 2;    
 
+                /*
                 //fourth cube (to the top-left of the first cube and doesn't have a normal map [top-left])
                 var material3 = new THREE.MeshPhongMaterial( { map: texture3 } );
                 var cube4 = new THREE.Mesh(geometry3, material3);
                 scene.add(cube4);
-                cube4.position.set(-2, 2, 0);            
+                cube4.position.set(-2, 2, 0);    
+                */     
+
+                //Cube four, accidentally made a fourth cube (above) thinking we needed a cube with just Texture B on it.
+               var geometry5 = new THREE.BoxGeometry();
+                var texture5 = THREE.ImageUtils.loadTexture("179.JPG");
+                var normMap5 = THREE.ImageUtils.loadTexture("179_norm.JPG");
+                var material5 = new THREE.MeshPhongMaterial( { map: texture5, normalMap: normMap5 } );
+                var cube5 = new THREE.Mesh(geometry5, material5);
+                scene.add(cube5);
+                cube5.position.set(2, 2, 0);
 
             // add the light
             var light = new THREE.PointLight(0xffffff, 1, 1000);
