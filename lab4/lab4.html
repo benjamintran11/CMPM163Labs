@@ -19,7 +19,7 @@
                   document.body.appendChild(renderer.domElement);
             camera.position.z = 5;
             
-            // setup first cube (with wood patttern texture map [bottom right])
+            // setup first cube (with wood pattern texture map, includes texture and a normal map [middle])
                 var geometry = new THREE.BoxGeometry();
                 //var texture = THREE.TextureLoader("176.jpg");
                 var texture = THREE.ImageUtils.loadTexture("176.JPG");
@@ -28,13 +28,13 @@
                 var cube = new THREE.Mesh(geometry, material);                  
                 scene.add(cube);
 
-                //second cube (left of first cube, without normal map [bottom right])
+                //second cube (left of first cube, without normal map, but has texture (wood)) [bottom right])
                 var material = new THREE.MeshPhongMaterial( { map: texture } );
                 var cube2 = new THREE.Mesh(geometry, material);
                 scene.add(cube2);
                 cube2.position.x -= 2;
 
-                //third cube (to the top of the first cube, with normal map and texture set [top right])
+                //third cube (to the top of the first cube, with new normal map and new texture set (gold/purple) [top-middle])
                 var geometry3 = new THREE.BoxGeometry();
                 var texture3 = THREE.ImageUtils.loadTexture("163.JPG");
                 var normMap3 = THREE.ImageUtils.loadTexture("191_norm.JPG");
@@ -53,6 +53,12 @@
 
                 /*
                 //Cube four, accidentally made a fourth cube (above) thinking we needed a cube with just Texture B on it.
+                */
+
+
+                /*
+                //Don't need this anymore, as created three cubes using my addTextureShaderCube() function
+
                var geometry5 = new THREE.BoxGeometry();
                 var texture5 = THREE.ImageUtils.loadTexture("179.JPG");
                 var normMap5 = THREE.ImageUtils.loadTexture("179_norm.JPG");
@@ -79,6 +85,7 @@
 
             //once, shader loaded add the cubes with the shaders on it.
 
+            //purple cube (bottom right)
             function addTextureShaderCube(){
               if (count == 3){
                 var uniforms = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("173b.JPG")}};
@@ -94,7 +101,7 @@
               mesh1.position.x += 2;
               scene.add(mesh1);
 
-              //new shader for cube 5 ("cube 4")
+              //new shader for cube 5 (bricks)
 
               var uniforms2 = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("179.JPG")}};
               material2 = new THREE.ShaderMaterial({

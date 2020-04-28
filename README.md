@@ -51,3 +51,37 @@ c) What color is sampled from texture at the uv coordinate (0.375, 0.25)? (sampl
 (0.375, 0.25) = (2, 5)
 so, x = 2 and y = 5, meaning the color that is sampled is: gray (light gray)
 
+
+/* 
+
+	Cube 1: 
+	Currently has a wood patterned-texture map, which includes texture and a normal map [middle]
+	- Part 1 Texture A & Normal Map A
+
+	Made by creating new variables: geometry, texture (loads image), normMap (loads normal map, giving features to surface). Then combined texture and normal map with var material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap } );. Next, created a cube with this new material on and added to scene.
+
+	Cube 2:
+	2nd cube was made exactly the same as above, just didn't have a normal map included, so only see texture (same texture as Cube 1). It reused geometry and texture.
+
+	Cube 3:
+	Cube 3 got many new variables, but did reuse the same methods as Cube #1, just implemented a new Texture and a non-matching Normal map (unlike Cube 1).
+
+	Cube 4 & 5:
+	Is part 2 Texture C of assignment 4, sporting with it, a new shader with a new texture. This cube isn't affected by light as we didn't tell it to be in function. Cube 4 and 5 were created in function addTextureShaderCube(). The count is to 3, because loading in 3 files: 2 fragmentShader and 1 vertexShader files. Everytime a type of these files is brought in, count goes up and stops at 3. At the very bottom, we have our loader files, which load in the effect and show to console if there's an error and/or if it has processed the file.
+
+	For Cube 4, fragmentShader.frag file is the shader that is used on Cube 4.
+
+	We reuse vertexShader throughout all the cubes.
+
+	Cube 5: 
+
+	- fragmentShader(2) file:
+	vUv ranges from 1*2, so when multiply anything under 2.0, the last pixel gets streched, making the remaining parts of the cube covered by the last column of pixels (which get stretched, as they have to cover the end of the face. This is why we multiply vUv so the range is from 0 to 2.) We know that the tile face is on a 1x1, so we use mod(scaleUV and divide it by 1.0). This ensures that that the fragment Shader will keep outputting things until it reaches the other side, meaning no more remainders. gl_FragColor is just putting the right colors onto the right spots.
+
+
+
+
+
+
+
+*/
