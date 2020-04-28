@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 4: Textures & Normal Maps</title>
+        <style>
+            body { margin: 0; }
+            canvas { display: block; }
+        </style>
+    </head>
+    <body>
+        <script src="../three.js-dev/build/three.js"></script>
+        <script>
+            // setup the scene
+                  var scene = new THREE.Scene();
+                  var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+                  var renderer = new THREE.WebGLRenderer();
+                  renderer.setSize(window.innerWidth, window.innerHeight);
+                  document.body.appendChild(renderer.domElement);
+            camera.position.z = 5;
+            
+            // setup first cube (with wood patttern texture map [bottom right])
+                var geometry = new THREE.BoxGeometry();
+                //var texture = THREE.TextureLoader("176.jpg");
+                var texture = THREE.ImageUtils.loadTexture("176.JPG");
+                var normMap = THREE.ImageUtils.loadTexture("176_norm.JPG");
+                var material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap } );
+                var cube = new THREE.Mesh(geometry, material);                  
+                scene.add(cube);
+
+                //second cube (left of first cube, without normal map [bottom right])
+                var material = new THREE.MeshPhongMaterial( { map: texture } );
+                var cube2 = new THREE.Mesh(geometry, material);
+                scene.add(cube2);
+                cube2.position.x -= 2;
+
+                //third cube (to the top of the first cube, with normal map and texture set [top right])
+                var geometry3 = new THREE.BoxGeometry();
+                var texture3 = THREE.ImageUtils.loadTexture("163.JPG");
+                var normMap3 = THREE.ImageUtils.loadTexture("191_norm.JPG");
+                var material3 = new THREE.MeshPhongMaterial( { map: texture3, normalMap: normMap3 } );
+                var cube3 = new THREE.Mesh(geometry3, material3);
+                scene.add(cube3);
+                cube3.position.y += 2;    
+
+                //fourth cube (to the top-left of the first cube and doesn't have a normal map [top-left])
+                var material3 = new THREE.MeshPhongMaterial( { map: texture3 } );
+                var cube4 = new THREE.Mesh(geometry3, material3);
+                scene.add(cube4);
+                cube4.position.set(-2, 2, 0);            
+
+            // add the light
+            var light = new THREE.PointLight(0xffffff, 1, 1000);
+            light.position.set(10, 10, 10);
+            scene.add(light);
+
+
+            THREE.Cache.enabled = true;
+            var count = 0;
+            var loader = new THREE.FileLoader();
+            var fshader, vshader;
+
+            var geometry1, material1, mesh1;
+
+            function addTextureShaderCube(){
+              if (count == 2){
+                var uniforms = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("173b.JPG")}};
+
+              geometry1 = new THREE.BoxGeometry(1, 1, 1);
+              material1 = new THREE.ShaderMaterial({
+                uniforms: uniforms, 
+                fragmentShader: fshader,
+                vertexShader: vshader,
+                precision: "mediump"});
+
+              mesh1 = new THREE.Mesh(geometry1, material1);
+              mesh1.position.x = 2;
+              scene.add(mesh1);
+            }
+          }
+
+          loader.load('shaders/vertexShader.vert',
+              // onLoad callback
+              function (data) {
+                  console.log(data); // output the text to the console
+                  vshader = data;
+                  count += 1;
+                  addTextureShaderCube(); // we will write this method
+              },
+              // onProgress callback
+              function (xhr) {
+                  console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+              },
+             // onError callback
+              function (err) {
+                  console.error('An error happened');
+              });
+
+              loader.load('shaders/fragmentShader.frag',
+              // onLoad callback
+              function (data) {
+                  console.log(data); // output the text to the console
+                  fshader = data;
+                  count += 1;
+                  addTextureShaderCube(); // we will write this method
+              },
+              // onProgress callback
+              function (xhr) {
+                  console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+              },
+              // onError callback
+              function (err) {
+                  console.error('An error happened');
+              });
+
+
+
+            var delta = -.5;
+
+            function animate() {
+                if (light.position.x < -30.0) {
+                  delta = .5;
+                } else if (light.position.x > 30.0) {
+                  delta = -.5;
+                }
+                light.position.x += delta;
+
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+            }
+            animate();
+
+
+        </script>
+    </body>
+</html>
