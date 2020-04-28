@@ -34,6 +34,8 @@ Lab 4
 
 Link to video: https://drive.google.com/file/d/17A953AsObiHzVlbc3WoureU_lbcrYred/view?usp=sharing
 
+![](lab4/Assignment4_ScreenshotShaders.png)
+
 Step 24 - Questions: 
 
 a) What is a formula to get the x coordinate of the texture given a u value of the uv coordinate (a value between 0 and 1)?
