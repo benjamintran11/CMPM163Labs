@@ -51,6 +51,7 @@
                 cube4.position.set(-2, 2, 0);    
                 */     
 
+                /*
                 //Cube four, accidentally made a fourth cube (above) thinking we needed a cube with just Texture B on it.
                var geometry5 = new THREE.BoxGeometry();
                 var texture5 = THREE.ImageUtils.loadTexture("179.JPG");
@@ -59,6 +60,7 @@
                 var cube5 = new THREE.Mesh(geometry5, material5);
                 scene.add(cube5);
                 cube5.position.set(2, 2, 0);
+                */
 
             // add the light
             var light = new THREE.PointLight(0xffffff, 1, 1000);
@@ -70,11 +72,15 @@
             var count = 0;
             var loader = new THREE.FileLoader();
             var fshader, vshader;
+            var fshader2;
 
             var geometry1, material1, mesh1;
+            var material2, mesh2;
+
+            //once, shader loaded add the cubes with the shaders on it.
 
             function addTextureShaderCube(){
-              if (count == 2){
+              if (count == 3){
                 var uniforms = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("173b.JPG")}};
 
               geometry1 = new THREE.BoxGeometry(1, 1, 1);
@@ -85,8 +91,21 @@
                 precision: "mediump"});
 
               mesh1 = new THREE.Mesh(geometry1, material1);
-              mesh1.position.x = 2;
+              mesh1.position.x += 2;
               scene.add(mesh1);
+
+              //new shader for cube 5 ("cube 4")
+
+              var uniforms2 = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("179.JPG")}};
+              material2 = new THREE.ShaderMaterial({
+                uniforms2: uniforms, 
+                fragmentShader: fshader2,
+                vertexShader: vshader,
+                precision: "mediump"});
+
+              mesh2 = new THREE.Mesh(geometry1, material2);
+              mesh2.position.set(2, 2, 0);
+              scene.add(mesh2);
             }
           }
 
@@ -114,6 +133,24 @@
                   fshader = data;
                   count += 1;
                   addTextureShaderCube(); // we will write this method
+              },
+              // onProgress callback
+              function (xhr) {
+                  console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+              },
+              // onError callback
+              function (err) {
+                  console.error('An error happened');
+              });
+
+              //loads in fragmentShader(2)
+              loader.load('shaders/fragmentShader(2).frag',
+              // onLoad callback
+              function (data) {
+                  console.log(data); // output the text to the console
+                  fshader2 = data;
+                  count += 1;
+                  addTextureShaderCube(); // we will write this method, is called above
               },
               // onProgress callback
               function (xhr) {
