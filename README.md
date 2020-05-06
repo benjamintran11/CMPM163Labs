@@ -84,6 +84,19 @@ so, x = 2 and y = 5, meaning the color that is sampled is: gray (light gray)
 
 Lab 5
 
+Video link: 
+
+https://drive.google.com/file/d/12L0UZt530aoj7owqed3Nz4fajm3N8Oes/view?usp=sharing
+
+Screenshots:
+
+![](lab5/Screenshot4.png)
+![](lab5/Screenshot1.png)
+![](lab5/Screenshot2.png)
+![](lab5/Screenshot5.png)
+![](lab5/Screenshot6.png)
+![](lab5/Screenshot3.png)
+
 In Lab 5, I changed/added a lot to the game. I first created the tire particles using the Youtube tutorial. Then, I used a new material (using the cloud particle map) and messed around with many of the same properties as the first one (color, lifespan, emission rate, etc.) to create the smoke effect from the emission pipe. But, I did use new properties, as I looked at the smoke example from the author's particle effect pack and used the same properties they used, adjusting it to suit mine (leaving a trail behind). 
 
 Next, I proceeded to add more to the world, making the checkpoint rings much more interesting, adding the rainbow particle effect that was used in the particle pack. I altered rainbow particle's shape to be a circle and changed it's emission rate and lifespan to get the desired effect. Then, I moved the firework effect over to this scene, adding them to the sides of each circle. For both the rainbow and the fireworks, I made them children of each ring, so when the player passes through a ring, the particles will disappear as well. Also, for the checkpoint rings I changed the rings to a light yellow color to have better color cohesion a night-time setting.
