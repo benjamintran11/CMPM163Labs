@@ -140,7 +140,7 @@ Material:
 ![](lab6/Screenshot1Car.png)
 ![](lab6/Screenshot1Carnew.png)
 
-Note: I converted my scene from daytime to nighttime!
+Note: I converted my scene from daytime to nighttime! Also here, you can see how my objects looked like before I put texture maps on them.
 
 For my material, I wanted to replicate my dark blue notebook's cover. I first created a material and then imported my car asset and put it in the scene. Next, I proceeded to match the material's color to my notebook and placed onto the car and then proceeded to tune the material until it resembled my notebook's cover. To make it look more plastic-like, I increased the smoothness, to give it more of a sheen. 
 
