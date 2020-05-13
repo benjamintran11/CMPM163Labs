@@ -112,3 +112,16 @@ I think my favorite addition has to be the stars I added, using the semi-hemisph
 Alongside this, I changed the player model to a white base color, matching the rings and the night aesthetics. I think the setting fits much better now.
 
 Finally, I added a title (Moondrive) to the title screen and changed the background clipart, adding a filter to make the scenes look like it's at night to fit with the "main scene". 
+
+
+
+Lab 6
+In my Unity scene, I used 3 spot lights, an area light, and a directional light. I was going for an evening time of day where the lamps have just turned on in preperation for the night. 
+
+Point lights start with a center point and a range, which determines how far light gets sent out from that origin point, in all directions (spherically) equally.
+
+A spotlight is a type of lighting that has a location and range that tells the angle and direction a light should be shown, creating a cone-shaped glow. The light diminishes as it gets further away from the initial point.
+
+An area light starts as a 2d rectangle, where light is emitted equally from all parts of only one side of it. Need to be baked into the lightmaps, as is quite intensive.
+
+Directional lights are like the sun, where they act like a distant light source which can be positioned anywhere in scene, as it doesn't have a single defined location. All objects in scene are illuminated from same direction and strength, no matter where they are placed in the scene. 
