@@ -117,6 +117,8 @@ Finally, I added a title (Moondrive) to the title screen and changed the backgro
 
 Lab 6
 
+Video Link: https://drive.google.com/file/d/1gin1WLEJbF1rwC7K1qSf0O6SYfnRdmp4/view?usp=sharing
+
 ![](lab6/Screenshot7.png)
 ![](lab6/Screenshot8new.png)
 ![](lab6/Screenshot9new.png)
