@@ -116,6 +116,14 @@ Finally, I added a title (Moondrive) to the title screen and changed the backgro
 
 
 Lab 6
+
+![](lab6/Screenshot7.png)
+![](lab6/Screenshot8new.png)
+![](lab6/Screenshot9new.png)
+
+![](lab6/Screenshot3.png)
+
+Lights:
 In my Unity scene, I used 3 spot lights, an area light, and a directional light. I was going for an evening time of day where the lamps have just turned on in preperation for the night. 
 
 Point lights start with a center point and a range, which determines how far light gets sent out from that origin point, in all directions (spherically) equally.
@@ -125,3 +133,20 @@ A spotlight is a type of lighting that has a location and range that tells the a
 An area light starts as a 2d rectangle, where light is emitted equally from all parts of only one side of it. Need to be baked into the lightmaps, as is quite intensive.
 
 Directional lights are like the sun, where they act like a distant light source which can be positioned anywhere in scene, as it doesn't have a single defined location. All objects in scene are illuminated from same direction and strength, no matter where they are placed in the scene. 
+
+
+Material: 
+
+![](lab6/Screenshot1Car.png)
+![](lab6/Screenshot1Carnew.png)
+
+Note: I converted my scene from daytime to nighttime!
+
+For my material, I wanted to replicate my dark blue notebook's cover. I first created a material and then imported my car asset and put it in the scene. Next, I proceeded to match the material's color to my notebook and placed onto the car and then proceeded to tune the material until it resembled my notebook's cover. To make it look more plastic-like, I increased the smoothness, to give it more of a sheen. 
+
+
+![](lab6/Screenshot6Gameplay.png)
+Gameplay
+
+Textures:
+Next, for my textures, I made three of them: one for my grass, one for the house, and one for the road. First I created materials for each one of the desired material (3 in total). Then, I put each normal map and jpg of each texture (I used the textures provided from lab 4) into the lab folder. Afterwards, I put the color jpg picture into the base map, while for my normal map, I put in the texture's normal map. Then I just put each texture onto the desired object. I played around with tiling on all of them to make them look more organic.
