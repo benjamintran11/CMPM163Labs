@@ -1,4 +1,6 @@
 # CMPM163Labs
+
+Benjamin Tran
  
  Note: Video link can be found at bottom.
  
@@ -152,3 +154,37 @@ Gameplay
 
 Textures:
 Next, for my textures, I made three of them: one for my grass, one for the house, and one for the road. First I created materials for each one of the desired material (3 in total). Then, I put each normal map and jpg of each texture (I used the textures provided from lab 4) into the lab folder. Afterwards, I put the color jpg picture into the base map, while for my normal map, I put in the texture's normal map. Then I just put each texture onto the desired object. I played around with tiling on all of them to make them look more organic.
+
+
+
+Lab 7: Mesh Manipulation (Mountains and Lake)
+
+Video link: https://drive.google.com/file/d/153_Y-cl7dS_fg4b9eFuiNLmqWSDBSlIt/view?usp=sharing
+
+
+![](lab7/Screenshot3.png)
+
+For Lab 7, I chose to do part 1 - Unity Mesh Manipulation.
+
+![](lab7/Screenshot5.png)
+
+In this assignment, I expanded my map and made new terrain, one that would support the water mesh that I created. 
+
+![](lab7/Screenshot4.png)
+
+For the mountains I used the shader graph effect that I created (using the Unity Learn Shader Graph: Vertex Displacement as reference) and then applied the effect to a plane, which warped it appearance to look hill-like. But the problem is that it only gave the top the shape, leaving the output like an outline of a mountain range. By rotating the figure along the y-axis, the whole top area that was once smooth, all became bumpy and spiky, which made it look like a mountain range now. Then I duplicated it twice to layer it, giving a sense of depth. I duplicated these layers two more times because the mountain range was too small on my map; not wanting to mess with the distortion I had created, I just replicated the whole thing. The cool thing is that when I moved it along each way of the x-axis, it changed it's shape, so each area of my mountain range looks unique. 
+
+![](lab7/Screenshot1.png)
+
+![](lab7/Screenshot2.png)
+
+Next, is the water shader I created (using Dapper Dino's "Writing Shadeers In Unity..." as reference). I wanted the water to look like a 3D lake, so I hollowed out the land and then proceeded to put the 2D shader on a material, then the material on a plane, and then placed it inside the hole, but at the top to create a visual illusion. 
+
+Then, having finished the tutorials, I adjusted the props (all of which I made) to look in place with the new terrain. So, I expanded the land, placed more trees, cars, lamps around; even making new color sets for some variety. Alongside this, I made new cloud assets to give the mountains some sense of height. 
+
+
+Partner report (Lupin Tu):
+
+![](lab7/Screenshot.png)
+
+Finally, as of the time I'm submitting the assignment, my partner Lubin Tu has not responded back to my message on Canvas, I have included a picture of my message I sent him this morning after class, but haven't gotten a response. To my knowledge, he hasn't ever reached out to me this week, so I just wanted to share my end of this partner check in thing. I will update this part if Lubin responds, if not I will leave as is. 
