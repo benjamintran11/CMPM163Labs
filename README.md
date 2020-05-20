@@ -184,8 +184,10 @@ Next, is the water shader I created (using Dapper Dino's "Writing Shadeers In Un
 Then, having finished the tutorials, I adjusted the props (all of which I made) to look in place with the new terrain. So, I expanded the land, placed more trees, cars, lamps around; even making new color sets for some variety. Alongside this, I made new cloud assets to give the mountains some sense of height. 
 
 
-Partner report (Lupin Tu):
+Partner report (Lupin Tu): 
 
-![](lab7/Screenshot.png)
+My partner Lupin did part 1. Here was his response to the questions: 
 
-Finally, as of the time I'm submitting the assignment, my partner Lubin Tu has not responded back to my message on Canvas, I have included a picture of my message I sent him this morning after class, but haven't gotten a response. To my knowledge, he hasn't ever reached out to me this week, so I just wanted to share my end of this partner check in thing. I will update this part if Lubin responds, if not I will leave as is. 
+"I did part 1 as well, and the most challenging part is mountain part, which I still quite confusing about, most interesting part is mountain as well, simply b/c water part is more confusing, and I had to find some other tutorial to learn. So the challenges I encountered from mountain tutorial is to make mountain top rounded, the tutorial is pretty irrelevant to mountain mesh, which is why it is so challenging."
+
+Lastly, we didn't help each other during this lab.
