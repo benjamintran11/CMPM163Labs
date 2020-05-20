@@ -161,6 +161,7 @@ Lab 7: Mesh Manipulation (Mountains and Lake)
 
 Video link: https://drive.google.com/file/d/153_Y-cl7dS_fg4b9eFuiNLmqWSDBSlIt/view?usp=sharing
 
+![](lab7/Gameplay.png)
 
 ![](lab7/Screenshot3.png)
 
