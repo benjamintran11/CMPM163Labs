@@ -196,7 +196,7 @@ Lastly, we didn't help each other during this lab.
 
 Lab 8
 
-Video Link:
+Video Link: https://drive.google.com/file/d/1ERLyl1Mkr9a7902CDlJ3x6xTvrOCATlh/view?usp=sharing
 
 For lab 8, I chose to do part 1, using Unity to create a procdural city.
 
@@ -215,7 +215,21 @@ ii. Screenshots:
 
 iii. Having been to the beach of Capitola and seeing these houses, it was a work of art and one of the coolest towns  I've ever witnessed. When thinking of a place that inspired me the most, it was this place. Because the beach and the color just combine to give it a sense of life. 
 
-	In an attempt to replicate this, I replaced the building models from the tutorial with my own house assets, which I used made for the previous assignments. I recolored them for this assignment using Capitola buildings I had photos of as reference. I also, downloaded a sand texture to use for the ground. Then I adjusted what I divided the Perlin Noise by until I was satisfied. Finally, I made the map size smaller (30x15), as Capitola's beach town wasn't that big. 
+In an attempt to replicate this, I replaced the building models from the tutorial with my own house assets, which I used made for the previous assignments. I recolored them for this assignment using Capitola buildings I had photos of as reference. I also, downloaded a sand texture to use for the ground. Then I adjusted what I divided the Perlin Noise by until I was satisfied. Finally, I made the map size smaller (30x15), as Capitola's beach town wasn't that big. 
+
+Here's my work from the tutorial:
+
+Video Link: https://drive.google.com/file/d/1F5KLY8vMZ3Pcwd1CMUAWz0r9Dx8JsRLS/view?usp=sharing
+
+Screenshots:
+![](lab8/Screenshot7buildings.png)
+![](lab8/Screenshot8buildings.png)
+![](lab8/Screenshot9buildings.png)
+![](lab8/Screenshot10buildings.png)
+![](lab8/Screenshot11buildings.png)
+![](lab8/Screenshot12buildings.png)
+
+
 
 iv. Partner's response (Cole Watts): 
 
