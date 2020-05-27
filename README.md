@@ -201,8 +201,8 @@ Video Link: https://drive.google.com/file/d/1ERLyl1Mkr9a7902CDlJ3x6xTvrOCATlh/vi
 For lab 8, I chose to do part 1, using Unity to create a procdural city.
 
 i. For Lab 8, I was inspired by Capitola's colorful beach houses. I even visited them in the past.
-![](IMG_20190527_142516.jpg)
-![](IMG_20190527_142828.jpg)
+![](lab8/IMG_20190527_142516.jpg)
+![](lab8/IMG_20190527_142828.jpg)
 ![](lab8/capitola.jpg)
 ![](lab8/pC1NCAR.jpg)
 
