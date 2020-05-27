@@ -191,3 +191,35 @@ My partner Lupin did part 1. Here was his response to the questions:
 "I did part 1 as well, and the most challenging part is mountain part, which I still quite confusing about, most interesting part is mountain as well, simply b/c water part is more confusing, and I had to find some other tutorial to learn. So the challenges I encountered from mountain tutorial is to make mountain top rounded, the tutorial is pretty irrelevant to mountain mesh, which is why it is so challenging."
 
 Lastly, we didn't help each other during this lab.
+
+
+
+Lab 8
+
+Video Link:
+
+For lab 8, I chose to do part 1, using Unity to create a procdural city.
+
+i. For Lab 8, I was inspired by Capitola's colorful beach houses.
+	![](lab8/capitola.jpg)
+	![](lab8/pC1NCAR.jpg)
+
+ii. Screenshots: 
+	![](lab8/Screenshot0.png)
+	![](lab8/Screenshot2.png)
+	![](lab8/Screenshot4.png)
+	![](lab8/Screenshot6.png)
+	![](lab8/Screenshot1.png)
+	![](lab8/Screenshot5.png)
+
+
+iii. Having been to the beach of Capitola and seeing these houses, it was a work of art and one of the coolest towns  I've ever witnessed. When thinking of a place that inspired me the most, it was this place. Because the beach and the color just combine to give it a sense of life. 
+
+	In an attempt to replicate this, I replaced the building models from the tutorial with my own house assets, which I used made for the previous assignments. I recolored them for this assignment using Capitola buildings I had photos of as reference. I also, downloaded a sand texture to use for the ground. Then I adjusted what I divided the Perlin Noise by until I was satisfied. Finally, I made the map size smaller (30x15), as Capitola's beach town wasn't that big. 
+
+iv. Partner's response (Cole Watts): 
+
+"I recolored the buildings and added more variance with the heights. I also added spikes on only the tallest buildings to resemble the New York skyscrapers"
+
+v. We didn't help each other during the lab. Just checked in with each other.
+
