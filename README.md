@@ -200,17 +200,19 @@ Video Link: https://drive.google.com/file/d/1ERLyl1Mkr9a7902CDlJ3x6xTvrOCATlh/vi
 
 For lab 8, I chose to do part 1, using Unity to create a procdural city.
 
-i. For Lab 8, I was inspired by Capitola's colorful beach houses.
-	![](lab8/capitola.jpg)
-	![](lab8/pC1NCAR.jpg)
+i. For Lab 8, I was inspired by Capitola's colorful beach houses. I even visited them in the past.
+![](IMG_20190527_142516.jpg)
+![](IMG_20190527_142828.jpg)
+![](lab8/capitola.jpg)
+![](lab8/pC1NCAR.jpg)
 
 ii. Screenshots: 
-	![](lab8/Screenshot0.png)
-	![](lab8/Screenshot2.png)
-	![](lab8/Screenshot4.png)
-	![](lab8/Screenshot6.png)
-	![](lab8/Screenshot1.png)
-	![](lab8/Screenshot5.png)
+![](lab8/Screenshot0.png)
+![](lab8/Screenshot2.png)
+![](lab8/Screenshot4.png)
+![](lab8/Screenshot6.png)
+![](lab8/Screenshot1.png)
+![](lab8/Screenshot5.png)
 
 
 iii. Having been to the beach of Capitola and seeing these houses, it was a work of art and one of the coolest towns  I've ever witnessed. When thinking of a place that inspired me the most, it was this place. Because the beach and the color just combine to give it a sense of life. 
